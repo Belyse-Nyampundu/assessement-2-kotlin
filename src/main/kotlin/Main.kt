@@ -8,6 +8,9 @@ fun main(){
     println(currentAmount.withdraw(12000.0))
     currentAmount.details()
  number()
+    var saving=SavingsAccount(222164,"Nyampundu",20000.0,2)
+    saving. withdraw()
+    saving.withdrawals
 }
 
 //Write and invoke one function that takes in a random string and returns the
@@ -35,7 +38,7 @@ fun fruitName(fruit: String):Name{
 fun passwords(password:String):Boolean {
   if(password.length==8||password.length==16){
       println("true")
-  }else if (password!=password){
+  }else if (password=="password"){
       return false
   }
 }
@@ -90,8 +93,15 @@ open class CurrentAccount(val accountNumber:Int,val accountName: String,var bala
 //from the account. It also increments the withdrawals attribute after a
 //successful withdrawal
 
-class SavingsAccount( accountNumber:Int, accountName: String, balance:Double):CurrentAccount(accountNumber,accountName,balance) {
-   fun withdrawals(amount: Int) {
+class SavingsAccount( accountNumber:Int, accountName: String, balance:Double,var withdrawals: Int):CurrentAccount(accountNumber,accountName,balance) {
+  fun withdraw(){
 
-    }
+      if(withdrawals < 4){
+          withdrawals ++
+          println("you can withdrawal your money")
+
+      }else{
+          println("not allowed to get money")
+      }
+  }
 }
